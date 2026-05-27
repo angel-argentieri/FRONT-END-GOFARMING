@@ -92,6 +92,14 @@ export default function Cadastro({ onVoltarParaLogin }: { onVoltarParaLogin: () 
                 console.log("Erro Supabase cadastro:", error);
                 setMensagemStatus(error.message || "Erro ao cadastrar.");
                 Alert.alert("Erro no cadastro", error.message);
+                
+                let mensagemAmigavel = error.message;
+                if (error.message.includes("rate limit exceeded")) {
+                    mensagemAmigavel = "Muitas tentativas seguidas. Por favor, aguarde alguns minutos antes de tentar novamente.";
+                }
+
+                setMensagemStatus(mensagemAmigavel);
+                Alert.alert("Erro no cadastro", mensagemAmigavel);
                 return;
             }
 

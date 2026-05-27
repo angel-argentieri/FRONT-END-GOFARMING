@@ -5,12 +5,14 @@ import {
   TouchableOpacity, 
   StyleSheet, 
   StatusBar, 
-  SafeAreaView, 
+  SafeAreaView,
+  Image,
   Dimensions,
   Modal,
   TextInput,
   Alert
 } from 'react-native';
+import Logo from '../../assets/Logo.png';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { 
@@ -48,10 +50,11 @@ const Dashboard = () => {
       
       {/* 2. Cabeçalho (Header) */}
       <View style={styles.header}>
-        <Ionicons name="leaf" size={42} color="#D1C4FF" />
-        <View style={styles.brandWrapper}>
-          <Text style={styles.brandName}>GoFarming</Text>
-        </View>
+        <Image 
+          source={Logo} 
+          style={styles.logo} 
+          resizeMode="contain" 
+        />
       </View>
 
       {/* 3. Grid Central */}
@@ -95,7 +98,6 @@ const Dashboard = () => {
 
       {/* 4. Rodapé e Barra de Navegação */}
       <View style={styles.footerContainer}>
-        <Text style={styles.footerBrandName}>GoFarming</Text>
         <View style={styles.neonDivider} />
         
         <View style={styles.tabBar}>
@@ -199,8 +201,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000',
   },
   header: {
-    marginTop: 30,
+    marginTop: 50,
     alignItems: 'center',
+    marginBottom: 5,
+
+  },
+  logo: {
+    width: 250,
+    height: 235,
   },
   brandWrapper: {
     marginTop: 5,

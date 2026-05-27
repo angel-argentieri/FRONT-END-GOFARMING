@@ -8,8 +8,6 @@ import { theme } from '../../global/themes';
 const { width } = Dimensions.get('window');
 
 const TAB_BAR_HEIGHT = 80;
-const CURVE_WIDTH = width * 0.5;
-const CURVE_HEIGHT = 20;
 
 export default function CustomTabBar({ state, descriptors, navigation }: any) {
   const insets = useSafeAreaInsets();
@@ -32,12 +30,6 @@ export default function CustomTabBar({ state, descriptors, navigation }: any) {
 
   return (
     <View style={[styles.container, { paddingBottom: insets.bottom }]}>
-      
-      <View style={styles.curveHeader}>
-        <View style={styles.curveBase}>
-          <Text style={styles.goFarmingText}>GoFarming</Text>
-        </View>
-      </View>
       
       <View style={styles.mainBar}>
         {state.routes
@@ -90,29 +82,6 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.dark,
     alignItems: 'center',
     justifyContent: 'flex-end',
-  },
-  curveHeader: {
-    width: '100%',
-    height: CURVE_HEIGHT * 2,
-    alignItems: 'center',
-    position: 'absolute',
-    bottom: TAB_BAR_HEIGHT - (CURVE_HEIGHT * 0.2),
-    zIndex: 1,
-  },
-  curveBase: {
-    width: CURVE_WIDTH,
-    height: CURVE_HEIGHT * 2,
-    backgroundColor: theme.colors.dark,
-    borderTopLeftRadius: CURVE_HEIGHT * 2,
-    borderTopRightRadius: CURVE_HEIGHT * 2,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: 5,
-  },
-  goFarmingText: {
-    color: theme.colors.secondary,
-    fontSize: 20,
-    fontWeight: 'bold',
   },
   mainBar: {
     flexDirection: 'row',
