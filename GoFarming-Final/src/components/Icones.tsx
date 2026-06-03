@@ -4,37 +4,26 @@ import Svg, { G, Circle, Path, Rect } from 'react-native-svg';
 const COR_NEON = "#B8A8FF";
 
 // ==========================================
-// 1. ÍCONE: EXPLORAR (Lupa com Bússola)
+// 1. ÍCONE: EXPLORAR (Coração com Pulso / Saúde)
 // ==========================================
 export const IconeExplorar = ({ width = 80, height = 80 }) => (
   <Svg viewBox="0 0 100 100" width={width} height={height}>
     {/* Camada de Brilho */}
     <G fill="none" stroke={COR_NEON} strokeWidth="7" opacity="0.25" strokeLinecap="round" strokeLinejoin="round">
-      <Circle cx="45" cy="45" r="32" />
-      <Path d="M 62 69 L 77 84 A 5 5 0 0 0 88 73 L 73 58" />
-      <Circle cx="45" cy="45" r="23" />
-      <Path d="M 45 22 V 28 M 45 62 V 68 M 22 45 H 28 M 62 45 H 68" />
-      <G transform="rotate(60, 45, 45)">
-        <Path d="M 45 25 L 53 45 L 45 65 L 37 45 Z" />
-        <Path d="M 45 25 V 41 M 45 49 V 65" />
-        <Circle cx="45" cy="45" r="4" />
-      </G>
+      {/* Contorno do Coração */}
+      <Path d="M 50 85 C 50 85 15 55 15 30 C 15 15 35 10 50 25 C 65 10 85 15 85 30 C 85 55 50 85 50 85 Z" />
+      {/* Linha de Pulso (Batimento) */}
+      <Path d="M 20 52 H 35 L 42 35 L 50 72 L 58 30 L 64 52 H 80" />
     </G>
     {/* Camada Principal */}
     <G fill="none" stroke={COR_NEON} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      <Circle cx="45" cy="45" r="32" />
-      <Path d="M 62 69 L 77 84 A 5 5 0 0 0 88 73 L 73 58" />
-      <Circle cx="45" cy="45" r="23" />
-      <Path d="M 45 22 V 28 M 45 62 V 68 M 22 45 H 28 M 62 45 H 68" />
-      <G transform="rotate(60, 45, 45)">
-        <Path d="M 45 25 L 53 45 L 45 65 L 37 45 Z" />
-        <Path d="M 45 25 V 41 M 45 49 V 65" />
-        <Circle cx="45" cy="45" r="4" />
-      </G>
+      {/* Contorno do Coração */}
+      <Path d="M 50 85 C 50 85 15 55 15 30 C 15 15 35 10 50 25 C 65 10 85 15 85 30 C 85 55 50 85 50 85 Z" />
+      {/* Linha de Pulso (Batimento) */}
+      <Path d="M 20 52 H 35 L 42 35 L 50 72 L 58 30 L 64 52 H 80" />
     </G>
   </Svg>
 );
-
 // ==========================================
 // 2. ÍCONE: ALERTAS (Sino com Exclamação)
 // ==========================================
